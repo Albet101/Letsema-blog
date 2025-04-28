@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modern Blog Page</title>
+  <style>
+    /* Reset some basic styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      background-color: #2c3e50;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #1abc9c;
+    }
+
+    .container {
+      flex: 1;
+      max-width: 900px;
+      width: 90%;
+      margin: 3rem auto;
+      background: white;
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+      position: relative;
+    }
+
+    .section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #1abc9c;
+      margin-top: 8px;
+      border-radius: 2px;
+    }
+
+    .section p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background: transparent;
+      font-size: 14px;
+      color: #777;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <!-- Adding a nice Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="https://www.atlassian.com/software/jira" target="_blank">Jira</a></li>
+    <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
+    <li><a href="https://github.com/Albet101/DatabaseGroup/tree/main/letsema" target="_blank">GitHub</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  
+  <div class="section">
+    <h2>Problem Statement</h2>
+    <p>
+      Users often struggle to manage project resources effectively across multiple platforms, leading to inefficiencies and lack of focus.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Solution</h2>
+    <p>
+      Our solution is to create a centralized dashboard that integrates project management, learning resources, and development tools into a single accessible platform.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Potential Solution</h2>
+    <p>
+      Future enhancements include implementing AI-driven insights to suggest relevant resources, automate repetitive tasks, and optimize workflows dynamically.
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2025 Modern Blog. All rights reserved.
+</footer>
+
+</body>
+</html>
