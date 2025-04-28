@@ -91,6 +91,18 @@
       line-height: 1.8;
       color: #555;
       margin-top: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .diagram-container {
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .diagram-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     footer {
@@ -127,25 +139,65 @@
 </nav>
 
 <div class="container">
-  
+
   <div class="section">
     <h2>Problem Statement</h2>
     <p>
-      Users often struggle to manage project resources effectively across multiple platforms, leading to inefficiencies and lack of focus.
+      Microfinance institutions (MFIs) in Lesotho face a critical challenge—they operate as isolated silos with no shared infrastructure. This fragmentation creates three major issues:
+    </p>
+    <p>
+      <strong>1. No Credit Visibility</strong> – Lenders can't see a borrower's full history across MFIs, leading to risky loan stacking and defaults.
+    </p>
+    <p>
+      <strong>2. Manual Processes</strong> – Loan approvals rely on paper trails and local knowledge, causing delays for legitimate borrowers.
+    </p>
+    <p>
+      <strong>3. Fraud Vulnerabilities</strong> – Disconnected systems enable identity fraud and duplicate loan applications.
+    </p>
+    <p>
+      Without coordination, MFIs bear higher risks, while trustworthy borrowers face unnecessary barriers to capital.
     </p>
   </div>
 
   <div class="section">
     <h2>Solution</h2>
     <p>
-      Our solution is to create a centralized dashboard that integrates project management, learning resources, and development tools into a single accessible platform.
+      We built <strong>Letsema</strong>—a horizontally fragmented system that balances regional autonomy with secure data sharing:
+    </p>
+    <p>
+      <strong>1. PostgreSQL + Citus Backbone</strong><br>
+      - Coordinator Node: Manages metadata and routes district-specific queries.<br>
+      - Worker Nodes (North/Central/South): Store localized loan data with automatic sharding by district.<br>
+      - Hybrid Queries: Local transactions stay within regions; cross-region checks use optimized gRPC calls.
+    </p>
+    <p>
+      <strong>2. MongoDB for Credit Histories</strong><br>
+      - Distributed NoSQL stores handle unstructured borrower data.<br>
+      - Eventual consistency via RabbitMQ message queues.
+    </p>
+    <p>
+      <strong>3. Role-Based Web Interface</strong><br>
+      - Custom dashboards for borrowers, loan officers, and analysts.<br>
+      - Real-time district filtering to enforce data locality.
     </p>
   </div>
 
+  <div class="diagram-container">
+    <h2>System Architecture</h2>
+    <img src="path/to/your-diagram.png" alt="Letsema System Architecture Diagram">
+    <!-- Replace 'path/to/your-diagram.png' with your actual diagram path -->
+  </div>
+
   <div class="section">
-    <h2>Potential Solution</h2>
+    <h2>Conclusion</h2>
     <p>
-      Future enhancements include implementing AI-driven insights to suggest relevant resources, automate repetitive tasks, and optimize workflows dynamically.
+      Letsema demonstrates that bridging fragmentation in microfinance is not just a technical achievement—it’s a catalyst for real economic empowerment. By carefully balancing regional autonomy with secure, distributed data access, we’ve shown that even in challenging environments, smarter infrastructure can reduce risk, accelerate approvals, and protect against fraud.
+    </p>
+    <p>
+      Our journey exposed the realities of working with partially distributed systems: technical compromises, architectural workarounds, and evolving best practices. Yet, it also highlighted the immense potential of collaborative microfinance networks in driving financial inclusion.
+    </p>
+    <p>
+      Looking forward, the path is clear: optimize for deeper cross-node integration, enable seamless district expansion, and evolve our data synchronization strategies to handle scale with confidence. Letsema is not the final destination—it’s a launchpad for a future where microfinance institutions across Lesotho, and beyond, operate as a connected, resilient ecosystem.
     </p>
   </div>
 
